@@ -42,6 +42,10 @@
               "target": "Package",
               "version": "[0.4.1, )"
             },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[*, )"
+            },
             "OpenTracing.Contrib.NetCore": {
               "target": "Package",
               "version": "[0.6.2, )"
@@ -53,6 +57,14 @@
             "Serilog.Sinks.Seq": {
               "target": "Package",
               "version": "[4.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.5.1, )"
+            },
+            "Swashbuckle.AspNetCore.Annotations": {
+              "target": "Package",
+              "version": "[5.5.1, )"
             }
           },
           "imports": [

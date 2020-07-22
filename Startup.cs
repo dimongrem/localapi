@@ -23,6 +23,9 @@ using Serilog;
 using Serilog.Sinks.Seq;
 using localapi.Services;
 using localapi.Services.Implementations;
+using localapi.Infrastructure.Helpers;
+using localapi.Infrastructure;
+using localapi.Infrastructure.Implementations;
 
 namespace localapi
 {
@@ -55,6 +58,9 @@ namespace localapi
                 return tracer;
             });
             services.AddSingleton<ILoggingService, LoggingService>();
+            services.AddSingleton<ICodeRepositoryEventService, CodeRepositoryEventService>();
+            services.AddScoped<IPullRequestRepository, PullRequestRepository>();
+            services.AddSwagger();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,6 +73,7 @@ namespace localapi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwaggerWithUI();
             }
 
             // app.UseHttpsRedirection();
